@@ -353,3 +353,18 @@ def test_list_sorting():
     words = ['banana', 'kiwi', 'apple', 'fig']
     assert sorted(words) == ['apple', 'banana', 'fig', 'kiwi']
     assert sorted(words, key=len) == ['fig', 'kiwi', 'apple', 'banana']
+
+
+def test_list_filtering():
+    """List filtering example"""
+
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    even_numbers = [number for number in numbers if number % 2 == 0]
+    assert even_numbers == [2, 4, 6, 8, 10]
+
+    odd_numbers = list(filter(lambda number: number % 2 == 1, numbers))
+    assert odd_numbers == [1, 3, 5, 7, 9]
+
+    assert numbers[::2] == odd_numbers
+    assert [number for number in numbers if number > 100] == []
