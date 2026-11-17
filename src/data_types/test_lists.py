@@ -336,3 +336,20 @@ def test_nested_list_comprehensions():
         (3, 7, 11),
         (4, 8, 12),
     ]
+
+
+def test_list_sorting():
+    """list sorting example"""
+
+    numbers = [3, 1, 4, 1, 5, 9, 2]
+
+    sorted_numbers = sorted(numbers)
+    assert sorted_numbers == [1, 1, 2, 3, 4, 5, 9]
+    assert numbers == [3, 1, 4, 1, 5, 9, 2]
+
+    numbers.sort(reverse=True)
+    assert numbers == [9, 5, 4, 3, 2, 1, 1]
+
+    words = ['banana', 'kiwi', 'apple', 'fig']
+    assert sorted(words) == ['apple', 'banana', 'fig', 'kiwi']
+    assert sorted(words, key=len) == ['fig', 'kiwi', 'apple', 'banana']
