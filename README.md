@@ -1,5 +1,11 @@
 # Playground and Cheatsheet for Learning Python
 
+## COMP 354 team repo
+
+This is a copy of the learn-python repo that is used for our COMP 354 assignment. Concordia (Fall 2026).
+
+Team: William Lamer, Aaleen Abbas Syed, Marco Kwan, Rushan Kazim
+
 > 🇺🇦 UKRAINE [IS BEING ATTACKED](https://war.ukraine.ua/) BY RUSSIAN ARMY. CIVILIANS ARE GETTING KILLED. RESIDENTIAL AREAS ARE GETTING BOMBED.
 > - Help Ukraine via:
 >   - [Serhiy Prytula Charity Foundation](https://prytulafoundation.org/en/)
