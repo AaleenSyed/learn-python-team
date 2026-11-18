@@ -44,3 +44,22 @@ def test_nested_if_statement():
         conclusion = 'Too young'
 
     assert conclusion == 'Can drive'
+
+def test_multiple_elif_statements():
+    """Multiple ELIF statements"""
+
+    grade = 85
+    conclusion = ''
+
+    if grade >= 90:
+        conclusion = 'A'
+    elif grade >= 80:
+        conclusion = 'B'
+    elif grade >= 70:
+        conclusion = 'C'
+    elif grade >= 60:
+        conclusion = 'D'
+    else:
+        conclusion = 'F'
+
+    assert conclusion == 'B'
