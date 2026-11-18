@@ -77,3 +77,35 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+def test_dictionary_get_and_setdefault():
+    """Dictionary get and setdefault"""
+
+    stock = {'apple': 5, 'banana': 0}
+
+    assert stock.get('apple') == 5
+    assert stock.get('cherry') is None
+    assert stock.get('cherry', 0) == 0
+    assert 'cherry' not in stock
+
+    assert stock.setdefault('banana', 10) == 0
+    assert stock.setdefault('cherry', 3) == 3
+    assert stock == {'apple': 5, 'banana': 0, 'cherry': 3}
+
+
+def test_dictionary_update_and_pop():
+    """Dictionary update, pop and items"""
+
+    grades = {'alice': 80, 'bob': 72}
+
+    grades.update({'bob': 75, 'carol': 90})
+    assert grades == {'alice': 80, 'bob': 75, 'carol': 90}
+
+    removed = grades.pop('alice')
+    assert removed == 80
+    assert 'alice' not in grades
+    assert grades.pop('dave', None) is None
+
+    assert list(grades.items()) == [('bob', 75), ('carol', 90)]
+    
