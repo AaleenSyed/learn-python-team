@@ -13,7 +13,7 @@ in other languages.
 def test_if_statement():
     """IF statement"""
 
-    number = 15
+    number = 150
     conclusion = ''
 
     if number < 0:
@@ -22,10 +22,12 @@ def test_if_statement():
         conclusion = 'Number equals to zero'
     elif number < 1:
         conclusion = 'Number is greater than zero but less than one'
+    elif number > 100:
+        conclusion = 'Number is greater than 100'
     else:
         conclusion = 'Number bigger than or equal to one'
 
-    assert conclusion == 'Number bigger than or equal to one'
+    assert conclusion == 'Number is greater than 100'
 
 
 def test_nested_if_statement():
