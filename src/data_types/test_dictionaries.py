@@ -77,3 +77,18 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+def test_dictionary_get_and_setdefault():
+    """Dictionary get and setdefault"""
+
+    stock = {'apple': 5, 'banana': 0}
+
+    assert stock.get('apple') == 5
+    assert stock.get('cherry') is None
+    assert stock.get('cherry', 0) == 0
+    assert 'cherry' not in stock
+
+    assert stock.setdefault('banana', 10) == 0
+    assert stock.setdefault('cherry', 3) == 3
+    assert stock == {'apple': 5, 'banana': 0, 'cherry': 3}
