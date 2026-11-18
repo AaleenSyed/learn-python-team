@@ -13,21 +13,23 @@ in other languages.
 def test_if_statement():
     """IF statement"""
 
-    number = 150
-    conclusion = ''
+    def check_number(number):
+        if number < 0:
+            return 'Number is less than zero'
+        elif number == 0:
+            return 'Number equals to zero'
+        elif number < 1:
+            return 'Number is greater than zero but less than one'
+        elif number < 10:
+            return 'Number is less than 10'
+        elif number > 100:
+            return 'Number is greater than 100'
+        else:
+            return 'Number bigger than or equal to one'
 
-    if number < 0:
-        conclusion = 'Number is less than zero'
-    elif number == 0:
-        conclusion = 'Number equals to zero'
-    elif number < 1:
-        conclusion = 'Number is greater than zero but less than one'
-    elif number > 100:
-        conclusion = 'Number is greater than 100'
-    else:
-        conclusion = 'Number bigger than or equal to one'
-
-    assert conclusion == 'Number is greater than 100'
+    assert check_number(5) == 'Number is less than 10'
+    assert check_number(150) == 'Number is greater than 100'
+    assert check_number(15) == 'Number bigger than or equal to one'
 
 
 def test_nested_if_statement():
