@@ -121,3 +121,40 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+
+    #1
+def greet_example(name, greeting='Hello'):
+    """Return a greeting. greeting has a default value 'Hello'"""
+    return greeting + ', ' + name + '!'
+
+
+def test_function_parameters_and_return_values():
+    """Function Parameters and Return Values"""
+
+    # Default greeting with hello !!!
+    assert greet_example('Jeff') == 'Hello, Jeff!'
+
+    # default greeting is overwritten with something else!1!
+    assert greet_example('Jeff', 'Hi') == 'Hi, Jeff!'
+
+
+    #2
+def divide_example(numerator, denominator):
+    """Divide two numbers. Dividing by zero is not allowed."""
+    if denominator == 0:
+        raise ValueError('Cannot divide by zero')
+    return numerator / denominator
+
+
+def test_function_input_validation():
+    """Function Input Validation"""
+
+    assert divide_example(10, 2) == 5
+
+    # Dividing by zero big no!! Should raise an error...
+    try:
+        divide_example(5, 0)
+        assert False
+    except ValueError:
+        pass
