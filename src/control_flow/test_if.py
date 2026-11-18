@@ -31,35 +31,36 @@ def test_if_statement():
 def test_nested_if_statement():
     """Nested IF statement"""
 
-    age = 20
-    has_license = True
-    conclusion = ''
-
-    if age >= 18:
-        if has_license:
-            conclusion = 'Can drive'
+    def check_driving(age, has_license):
+        if age >= 18:
+            if has_license:
+                return 'Can drive'
+            else:
+                return 'No license'
         else:
-            conclusion = 'No license'
-    else:
-        conclusion = 'Too young'
+            return 'Too young'
 
-    assert conclusion == 'Can drive'
+    assert check_driving(20, True) == 'Can drive'
+    assert check_driving(20, False) == 'No license'
+    assert check_driving(16, True) == 'Too young'
 
 def test_multiple_elif_statements():
     """Multiple ELIF statements"""
 
-    grade = 85
-    conclusion = ''
+    def get_grade(grade):
+        if grade >= 90:
+            return 'A'
+        elif grade >= 80:
+            return 'B'
+        elif grade >= 70:
+            return 'C'
+        elif grade >= 60:
+            return 'D'
+        else:
+            return 'F'
 
-    if grade >= 90:
-        conclusion = 'A'
-    elif grade >= 80:
-        conclusion = 'B'
-    elif grade >= 70:
-        conclusion = 'C'
-    elif grade >= 60:
-        conclusion = 'D'
-    else:
-        conclusion = 'F'
-
-    assert conclusion == 'B'
+    assert get_grade(95) == 'A'
+    assert get_grade(85) == 'B'
+    assert get_grade(75) == 'C'
+    assert get_grade(65) == 'D'
+    assert get_grade(55) == 'F'
