@@ -30,6 +30,8 @@ def test_list_type():
     assert squares[-1] == 25
     assert squares[-3:] == [9, 16, 25]  # slicing returns a new list
     assert squares[::2] == [1, 9, 25]
+    assert squares[1:3] == [4, 9]
+
 
     # All slice operations return a new list containing the requested elements.
     # This means that the following slice returns a new (shallow) copy of
