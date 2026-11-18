@@ -26,3 +26,41 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_nested_if_statement():
+    """Nested IF statement"""
+
+    def check_driving(age, has_license):
+        if age >= 18:
+            if has_license:
+                return 'Can drive'
+            else:
+                return 'No license'
+        else:
+            return 'Too young'
+
+    assert check_driving(20, True) == 'Can drive'
+    assert check_driving(20, False) == 'No license'
+    assert check_driving(16, True) == 'Too young'
+
+def test_multiple_elif_statements():
+    """Multiple ELIF statements"""
+
+    def get_grade(grade):
+        if grade >= 90:
+            return 'A'
+        elif grade >= 80:
+            return 'B'
+        elif grade >= 70:
+            return 'C'
+        elif grade >= 60:
+            return 'D'
+        else:
+            return 'F'
+
+    assert get_grade(95) == 'A'
+    assert get_grade(85) == 'B'
+    assert get_grade(75) == 'C'
+    assert get_grade(65) == 'D'
+    assert get_grade(55) == 'F'
