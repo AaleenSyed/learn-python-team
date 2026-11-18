@@ -26,3 +26,21 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_nested_if_statement():
+    """Nested IF statement"""
+
+    age = 20
+    has_license = True
+    conclusion = ''
+
+    if age >= 18:
+        if has_license:
+            conclusion = 'Can drive'
+        else:
+            conclusion = 'No license'
+    else:
+        conclusion = 'Too young'
+
+    assert conclusion == 'Can drive'
