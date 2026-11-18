@@ -339,7 +339,7 @@ def test_nested_list_comprehensions():
 
 
 def test_list_sorting():
-    """list sorting example"""
+    """List sorting example"""
 
     numbers = [3, 1, 4, 1, 5, 9, 2]
 
